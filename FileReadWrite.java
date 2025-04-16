@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+
 final class FileReadWrite {
     // This program reads numbers from a file, processes
     //  them, and writes the results to another file.
@@ -17,6 +18,13 @@ final class FileReadWrite {
         throw new IllegalStateException("Utility Class");
     }
 
+    /** Declare final array size. */
+    private static final int ARRAY_SIZE = 100000;
+    /**
+     * Main Method.
+     *
+     * @param args Unused.
+     */
     public static void main(final String[] args) throws Exception {
         if (args.length < 1) {
             System.out.println("Usage: java Program <inputFileName>");
@@ -26,7 +34,7 @@ final class FileReadWrite {
         String inputFileName = args[0];
         String outputFileName = "output.txt";
 
-        double[] numbers = new double[1000]; // Fixed size array
+        double[] numbers = new double[ARRAY_SIZE]; // Fixed size array
         int count = 0;
 
         try (Scanner scanner = new Scanner(new File(inputFileName))) {
